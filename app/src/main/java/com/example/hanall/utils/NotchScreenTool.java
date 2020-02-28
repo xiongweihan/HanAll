@@ -1,10 +1,13 @@
 package com.example.hanall.utils;
 
 import android.content.Context;
+import android.os.Build;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
+
+import androidx.annotation.RequiresApi;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -81,6 +84,7 @@ public class NotchScreenTool {
      *
      * @param window 应用页面window对象
      */
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static void setFullScreenAtHuawei(Window window) {
         if (window == null) {
             return;
@@ -105,6 +109,7 @@ public class NotchScreenTool {
      *
      * @param window 应用页面window对象
      */
+    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
     public static void setNotFullScreenAtHuawei(Window window) {
         if (window == null) {
             return;
@@ -207,6 +212,7 @@ public class NotchScreenTool {
      * @param context
      * @return false：未隐藏刘海区域 true：隐藏了刘海区域
      */
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR1)
     public static boolean getIsNotchHideOpenAtXiaomi(Context context) {
         return Settings.Global.getInt(context.getContentResolver(), "force_black", 0) == 1;
     }

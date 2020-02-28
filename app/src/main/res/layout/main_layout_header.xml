@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="?actionBarSize"
+    android:layout_gravity="center_vertical"
+    android:background="@color/colorPrimary"
+    android:gravity="center_vertical"
+    android:orientation="horizontal">
+    <!--    主页title布局-->
+    <ImageView
+        android:id="@+id/iv_main_head"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="@dimen/dimin_10dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/ic_head" />
+
+    <TextView
+        android:id="@+id/tv_main_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimin_10dp"
+        android:textSize="16sp"
+        android:textColor="@color/white"
+        android:text="楚河汉街"/>
+
+
+</LinearLayout>
