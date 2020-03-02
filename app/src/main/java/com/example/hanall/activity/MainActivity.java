@@ -1,13 +1,11 @@
 package com.example.hanall.activity;
 
 
-import android.annotation.SuppressLint;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -17,6 +15,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import com.example.hanall.R;
 import com.example.hanall.utils.ScreenInfoUtils;
 import com.example.hanall.utils.ToastUtil;
+import com.example.hanall.widget.HeadView;
 import com.google.android.material.navigation.NavigationView;
 
 import butterknife.BindView;
@@ -28,9 +27,11 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
     @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
     @BindView(R.id.iv_main_head)
-    ImageView ivMainHead;
+    HeadView ivMainHead;
     @BindView(R.id.tv_main_title)
     TextView tvMainTitle;
+    private HeadView ivDrawerHead;
+    private TextView tvDrawerName;
 
     @Override
     protected int getLayoutId() {
@@ -53,10 +54,9 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         View headView = navigationView.getHeaderView(0);//获取头部布局
         //添加头布局的另外一种方式
         //View headview=navigationview.inflateHeaderView(R.layout.navigationview_header);
-        ImageView imageHead = headView.findViewById(R.id.iv_head);
-        imageHead.setOnClickListener(this);
-        TextView tvName = headView.findViewById(R.id.tv_name);
-        tvName.setText("韩雄伟");
+        ivDrawerHead = headView.findViewById(R.id.iv_head);
+        ivDrawerHead.setOnClickListener(this);
+        tvDrawerName = headView.findViewById(R.id.tv_name);
 
         //设置item的条目颜色
         // 有-为未选中的颜色, 没有-为选中的颜色
@@ -76,6 +76,16 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
         navigationView.setCheckedItem(R.id.single_1);
         //设置条目点击监听
         navigationView.setNavigationItemSelectedListener(this);
+        initData();
+
+    }
+
+    private void initData() {
+        ivMainHead.setImageResource(R.mipmap.ic_logo);//首页头像
+        tvMainTitle.setText("首页标题~");
+        ivDrawerHead.setImageResource(R.mipmap.ic_logo);//侧滑头像
+        tvDrawerName.setText("韩雄伟");
+
 
     }
 

@@ -1,6 +1,5 @@
 package com.example.hanall.utils;
 
-import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.Point;
@@ -12,6 +11,7 @@ import android.view.WindowManager;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 /**
  * ================================================
@@ -25,7 +25,7 @@ public class ScreenInfoUtils {
      *
      * @param activity 上下文
      */
-    public static void fullScreen(Activity activity) {
+    public static void fullScreen(AppCompatActivity activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 //5.x开始需要把颜色设置透明，否则导航栏会呈现系统默认的浅灰色
@@ -75,7 +75,7 @@ public class ScreenInfoUtils {
      * @param activity 上下文
      * @return 100
      */
-    public static int getWindowWidth(Activity activity) {
+    public static int getWindowWidth(AppCompatActivity activity) {
         return activity.getWindowManager().getDefaultDisplay().getWidth();
     }
 
@@ -85,7 +85,7 @@ public class ScreenInfoUtils {
      * @param activity 上下文
      * @return 100
      */
-    public static int getWindowHeight(Activity activity) {
+    public static int getWindowHeight(AppCompatActivity activity) {
         return activity.getWindowManager().getDefaultDisplay().getHeight();
     }
 

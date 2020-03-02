@@ -1,6 +1,5 @@
 package com.example.hanall.utils;
 
-import android.app.Activity;
 import android.content.Context;
 import android.text.TextUtils;
 import android.view.Gravity;
@@ -8,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.hanall.R;
 import com.example.hanall.base.App;
@@ -39,7 +40,7 @@ public class ToastUtil {
         showToast(context, text, Toast.LENGTH_SHORT, Gravity.BOTTOM, 0, 180);
     }
 
-    public static void showUiToast(final Activity activity, final String value) {
+    public static void showUiToast(final AppCompatActivity activity, final String value) {
         activity.runOnUiThread(new Runnable() {
             @Override
             public void run() {
