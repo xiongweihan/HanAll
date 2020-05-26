@@ -15,23 +15,46 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
         <!--        标题栏样式-->
-       <include layout="@layout/main_layout_header"/>
+        <include layout="@layout/main_layout_header" />
 
         <!--        主页内容-->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/tv"
+            <androidx.viewpager.widget.ViewPager
+                android:id="@+id/vp_main"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="你好，心魄嗯有"
+                android:layout_height="0dp"
+                app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_weight="1" />
+
+            <com.google.android.material.bottomnavigation.BottomNavigationView
+                android:id="@+id/bottom_navigation"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white"
+                app:itemIconTint="@drawable/main_bottom_navigation"
+                app:itemTextColor="@drawable/main_bottom_navigation"
+                app:menu="@menu/menu_bottom_navigation"
+                app:labelVisibilityMode="labeled"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/vp_main" />
+            <!--BottomNavigationView 控件分析：
+            app:itemTextColor 指的是导航栏文字的颜色
+            app:itemIconTint 指的是导航栏中图片的颜色
+            app:iteamBackground 指的是底部导航栏的背景颜色,默认是主题的颜色
+            app:menu 指的是布局（文字和图片都写在这个里面）
+
+            不启用缩放动画，只需要加入以下的代码即可（注意 API > 28）：
+            出现问题：当 item > 3 时候，会隐藏文字,这个属性，可以解决此问题
+             app:labelVisibilityMode="labeled-->
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </LinearLayout>
 
@@ -43,7 +66,7 @@
         android:layout_gravity="start"
         app:headerLayout="@layout/navigationview_header"
         app:insetForeground="@android:color/transparent"
-        app:menu="@menu/menu_navigation">
+        app:menu="@menu/menu_drawer_navigation">
 
         <LinearLayout
             android:layout_width="match_parent"

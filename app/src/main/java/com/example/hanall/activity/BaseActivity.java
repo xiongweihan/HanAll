@@ -29,7 +29,12 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayoutId());
         ButterKnife.bind(this);//第三方注解绑定activity
         initView();
+        initData();
         initListener();
+    }
+
+    protected void initData() {
+
     }
 
     protected void initListener() {

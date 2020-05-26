@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
-
+    <!--这个是 左侧抽屉菜单-->
     <!--      android:checkableBehavior 有三个属性值可选
           all（多选）
           single（单选）
@@ -11,9 +11,9 @@
         android:checkableBehavior="single">
         <item
             android:id="@+id/single_1"
+            android:actionLayout="@layout/bage_hint"
             android:icon="@drawable/ic_android_fill"
-            android:title="安卓"
-            android:actionLayout="@layout/bage_hint"/>
+            android:title="安卓" />
 
         <item
             android:id="@+id/single_2"
