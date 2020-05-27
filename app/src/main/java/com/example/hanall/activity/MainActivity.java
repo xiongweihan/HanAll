@@ -24,6 +24,7 @@ import com.example.hanall.fragment.ThirdFragment;
 import com.example.hanall.utils.ScreenInfoUtils;
 import com.example.hanall.utils.ToastUtil;
 import com.example.hanall.widget.HeadView;
+import com.example.hanall.widget.PopDialog;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 
@@ -200,8 +201,30 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
             case R.id.footer_item_out:
                 ToastUtil.showToast("退出");
                 //有时间写登录页面
+                showDialog();
                 break;
         }
+    }
+
+    private void showDialog() {
+        PopDialog popDialog = new PopDialog(this);
+        popDialog.setTitle("测试title")
+                .setMessage("测试message")
+                .setNegtive("取消")
+                .setSingle(true)
+                .setOnClickBottomListener(new PopDialog.OnClickBottomListener() {
+                    @Override
+                    public void onPositiveClick() {
+                        ToastUtil.showToast("onPositiveClick");
+                        popDialog.dismiss();
+                    }
+
+                    @Override
+                    public void onNegtiveClick() {
+                        ToastUtil.showToast("onNegtiveClick");
+                        popDialog.dismiss();
+                    }
+                }).show();
     }
 
     class PageChangeListener implements ViewPager.OnPageChangeListener {
