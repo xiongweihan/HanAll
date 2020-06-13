@@ -4,7 +4,14 @@
    <dimen name="dimin_10dp">10dp</dimen>
    <dimen name="dimin_15dp">15dp</dimen>
    <dimen name="dimin_50dp">50dp</dimen>
+   <dimen name="dp_20">20dp</dimen>
+   <dimen name="dp_40">40dp</dimen>
+   <dimen name="dp_100">100dp</dimen>
+   <dimen name="dp_200">200dp</dimen>
 
-<!--   大小-->
+
+   <!--   大小-->
    <dimen name="size_17">17sp</dimen>
+   <dimen name="dp_5">5dp</dimen>
+   <dimen name="dp_50">50dp</dimen>
 </resources>

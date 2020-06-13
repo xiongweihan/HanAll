@@ -14,7 +14,7 @@ import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
 public abstract class BaseFragment extends Fragment {
-    private Context mContext;
+    protected Context mContext;
 
     private Unbinder unbinder;
 
@@ -41,10 +41,10 @@ public abstract class BaseFragment extends Fragment {
         initListener();
     }
 
-    private void initData() {
+    protected void initData() {
     }
 
-    private void initListener() {
+    protected void initListener() {
     }
     protected abstract int getLayoutId();
 
