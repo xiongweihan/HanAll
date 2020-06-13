@@ -21,6 +21,7 @@ import com.example.hanall.fragment.FirstFragment;
 import com.example.hanall.fragment.FourthFragment;
 import com.example.hanall.fragment.SecondFragment;
 import com.example.hanall.fragment.ThirdFragment;
+import com.example.hanall.utils.DoubleClickUtils;
 import com.example.hanall.utils.ScreenInfoUtils;
 import com.example.hanall.utils.ToastUtil;
 import com.example.hanall.widget.HeadView;
@@ -117,13 +118,18 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void initListener() {
         super.initListener();
         ivMainHead.setOnClickListener(this);
         ivDrawerHead.setOnClickListener(this);
         btnSetting.setOnClickListener(this);
-        btnout.setOnClickListener(this);
+//        btnout.setOnClickListener(this);
+        //双击
+        btnout.setOnTouchListener(new DoubleClickUtils(view -> {
+            ToastUtil.showToast("双击操作");
+        }));
 
         mViewPager.addOnPageChangeListener( new PageChangeListener());
         bottomNavigationTabLayout.setOnNavigationItemSelectedListener(item -> {
@@ -196,13 +202,17 @@ public class MainActivity extends BaseActivity implements NavigationView.OnNavig
                 //需要些选择图像替换
                 break;
             case R.id.footer_item_setting:
+                if(DoubleClickUtils.isDoubleClick()){
+                    ToastUtil.showToast("请勿重复点击");
+                    return;
+                }
                 ToastUtil.showToast("设置");
                 break;
-            case R.id.footer_item_out:
-                ToastUtil.showToast("退出");
-                //有时间写登录页面
-                showDialog();
-                break;
+//            case R.id.footer_item_out:
+//                ToastUtil.showToast("退出");
+//                //有时间写登录页面
+//                showDialog();
+//                break;
         }
     }
 
