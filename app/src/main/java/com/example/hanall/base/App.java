@@ -3,6 +3,8 @@ package com.example.hanall.base;
 import android.app.Application;
 import android.content.Context;
 
+import com.example.hanall.utils.SpUtils;
+
 public class App extends Application {
 
     private static App app;
@@ -12,6 +14,8 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         app = this;
+        //初始化sputils
+        SpUtils.init(getContext());
 
     }
 
