@@ -3,13 +3,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.hanall">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-<!--    //它可以监听用户的连接状态并在用户重新连接到网络时重启之前失败的请求-->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-<!--    //用于硬盘缓存和读取-->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- //它可以监听用户的连接状态并在用户重新连接到网络时重启之前失败的请求 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- //用于硬盘缓存和读取 -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
 
     <application
         android:name=".base.App"
@@ -20,13 +17,19 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.MainActivity">
+        <activity
+            android:name=".activity.SplashActivity"
+            android:launchMode="standard"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.MainActivity"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

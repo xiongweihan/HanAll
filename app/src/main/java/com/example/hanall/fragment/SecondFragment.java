@@ -15,6 +15,7 @@ import com.example.hanall.adapter.MedalPagerAdapter;
 import com.example.hanall.utils.GlideUtil;
 import com.example.hanall.utils.ScreenUtil;
 import com.example.hanall.R;
+import com.example.hanall.widget.HorizontalStackTransformerWithRotation;
 import com.example.hanall.widget.ZoomOutPageTransformer;
 
 import java.util.ArrayList;
@@ -125,10 +126,12 @@ public class SecondFragment extends BaseFragment {
 
         mViewPager.addOnPageChangeListener(new OnPageChangeListener());
 
+//        viewpager设置setPageTransformer（）方法一定要在setAdapter（）方法之前
+
+        //设置ViewPager切换效果，即实现画廊效果
+        mViewPager.setPageTransformer(true, new HorizontalStackTransformerWithRotation(mContext,mViewPager));
         //为ViewPager设置PagerAdapter
         mViewPager.setAdapter(new MedalPagerAdapter(imagViews));
-        //设置ViewPager切换效果，即实现画廊效果
-        mViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
         //设置预加载数量
         mViewPager.setOffscreenPageLimit(2);
         //设置每页之间的左右间隔

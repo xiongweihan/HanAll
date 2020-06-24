@@ -3,4 +3,6 @@
 
     <string name="back">返回</string>
     <string name="submit">提交</string>
+
+    <string name="tv_next">跳过</string>
 </resources>
