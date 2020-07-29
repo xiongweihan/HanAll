@@ -6,17 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 
-import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.hanall.adapter.MedalPagerAdapter;
 import com.example.hanall.utils.GlideUtil;
 import com.example.hanall.utils.ScreenUtil;
 import com.example.hanall.R;
-import com.example.hanall.widget.HorizontalStackTransformerWithRotation;
-import com.example.hanall.widget.ZoomOutPageTransformer;
+import com.example.hanall.widget.PageTransformer.HorizontalStackTransformerWithRotation;
 
 import java.util.ArrayList;
 import java.util.List;

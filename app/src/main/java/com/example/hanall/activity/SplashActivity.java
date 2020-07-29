@@ -12,7 +12,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.hanall.R;
 import com.example.hanall.adapter.MedalPagerAdapter;
-import com.example.hanall.widget.SplashTransformer;
+import com.example.hanall.widget.PageTransformer.SplashTransformer;
 
 import java.util.ArrayList;
 import java.util.List;

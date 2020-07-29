@@ -1,4 +1,4 @@
-package com.example.hanall.widget;
+package com.example.hanall.widget.PageTransformer;
 
 import android.view.View;
 
