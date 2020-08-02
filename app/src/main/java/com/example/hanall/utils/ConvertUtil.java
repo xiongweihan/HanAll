@@ -47,12 +47,12 @@ public class ConvertUtil {
      * @param dipValue dp或者dip的值
      * @return 将dip或dp值转换为px值，保证尺寸大小不变
      */
-    public static int dipToPx(Context context, float dipValue) {
+    public static int dip2Px(Context context, float dipValue) {
         final float scale = context.getResources().getDisplayMetrics().density;
         return (int) (dipValue * scale + 0.5f);
     }
 
-    public static int dipToPx(float dipValue) {
+    public static int dip2Px(float dipValue) {
         final float scale = App.getInstance().getResources().getDisplayMetrics().density;
         return (int) (dipValue * scale + 0.5f);
     }

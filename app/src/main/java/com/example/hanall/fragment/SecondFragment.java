@@ -89,7 +89,7 @@ public class SecondFragment extends BaseFragment {
 
         imagViews = new ArrayList<>();
         imagViews.clear();
-        for (int i = 0; i < mPics.length; i++) {
+        for (int mPic : mPics) {
             @SuppressLint("InflateParams")
             View view = LayoutInflater.from(getContext()).inflate(R.layout.item_gallery_layout, null);
             ImageView imageView = view.findViewById(R.id.iv_gallery);
@@ -98,7 +98,7 @@ public class SecondFragment extends BaseFragment {
             imageLp.height = (int) (ScreenUtil.getScreenWidth(getContext()) * 0.36);
             imageView.setLayoutParams(imageLp);
 
-            GlideUtil.load(getContext(), mPics[i], imageView);
+            GlideUtil.load(getContext(), mPic, imageView);
 
             imagViews.add(view);
         }
@@ -107,13 +107,13 @@ public class SecondFragment extends BaseFragment {
     @SuppressLint("ClickableViewAccessibility")
     private void initViewPager() {
         //设置ViewPager的布局
-        LinearLayout.LayoutParams params=new LinearLayout.LayoutParams(
-                ScreenUtil.getScreenWidth(getContext())*6/10,
-                ScreenUtil.getScreenWidth(getContext())*6/10);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                ScreenUtil.getScreenWidth(Objects.requireNonNull(getContext())) * 6 / 10,
+                ScreenUtil.getScreenWidth(getContext()) * 6 / 10);
 
         params.topMargin = ScreenUtil.getScreenHeight(mContext) / 15;
 
-        /**** 重要部分  ******/
+        /* *  重要部分 **/
         //clipChild用来定义他的子控件是否要在他应有的边界内进行绘制。 默认情况下，clipChild被设置为true。 也就是不允许进行扩展绘制。
         mViewPager.setClipChildren(false);
         //父容器一定要设置这个，否则看不出效果
@@ -126,7 +126,7 @@ public class SecondFragment extends BaseFragment {
 //        viewpager设置setPageTransformer（）方法一定要在setAdapter（）方法之前
 
         //设置ViewPager切换效果，即实现画廊效果
-        mViewPager.setPageTransformer(true, new HorizontalStackTransformerWithRotation(mContext,mViewPager));
+        mViewPager.setPageTransformer(true, new HorizontalStackTransformerWithRotation(mContext, mViewPager));
         //为ViewPager设置PagerAdapter
         mViewPager.setAdapter(new MedalPagerAdapter(imagViews));
         //设置预加载数量
