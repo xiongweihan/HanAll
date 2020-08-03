@@ -34,8 +34,12 @@
         android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="三个远点的loading:"/>
             <com.example.hanall.widget.ThreeDotsLoadingView
                 android:id="@+id/loading_view"
                 android:layout_marginTop="@dimen/dp_20"
@@ -45,6 +49,18 @@
                 android:layout_height="wrap_content"
                 app:dot_color="@color/colorPrimary"
                 app:dot_radius="16.0"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="progress类型的loading"/>
+            <com.example.hanall.widget.LoadingProgress
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_5"
+                android:layout_marginStart="@dimen/dp_10"
+                android:layout_marginEnd="@dimen/dp_10"
+                android:layout_marginTop="@dimen/dp_10"/>
         </LinearLayout>
     </ScrollView>
 
