@@ -12,8 +12,6 @@
         android:id="@+id/viewpager"
         android:layout_width="@dimen/dp_200"
         android:layout_height="@dimen/dp_200"
-        android:layout_below="@+id/title_layout"
-        android:layout_centerInParent="true"
         android:layout_gravity="center"
         android:clipChildren="false" />
     <LinearLayout
@@ -61,6 +59,16 @@
                 android:layout_marginStart="@dimen/dp_10"
                 android:layout_marginEnd="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_10"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_10"
+                android:text="通讯录右侧字母列表"/>
+            <com.example.hanall.widget.CharacterView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
         </LinearLayout>
     </ScrollView>
 
