@@ -1,6 +1,7 @@
 package com.example.hanall.fragment;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.LinearLayout;
 
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.hanall.activity.NinePictureActivity;
 import com.example.hanall.adapter.MedalPagerAdapter;
 import com.example.hanall.utils.GlideUtil;
 import com.example.hanall.utils.ScreenUtil;
@@ -19,7 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class SecondFragment extends BaseFragment {
+public class SecondFragment extends BaseFragment implements View.OnClickListener {
     private ViewPager mViewPager;
     private LinearLayout mViewPagerContainer;
     private LinearLayout llDotLayout;
@@ -36,8 +38,9 @@ public class SecondFragment extends BaseFragment {
         mViewPager = view.findViewById(R.id.viewpager);
         llDotLayout = view.findViewById(R.id.dot_layout);
         mViewPagerContainer = view.findViewById(R.id.viewPagerContainer);
-
+        view.findViewById(R.id.btn_toNineImageActivity).setOnClickListener(this);
     }
+
 
     //模仿请求数据
     private void getDataDetail() {
@@ -140,6 +143,17 @@ public class SecondFragment extends BaseFragment {
             return mViewPager.dispatchTouchEvent(event);
         });
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        Intent intent;
+        switch (v.getId()){
+            case R.id.btn_toNineImageActivity:
+                intent = new Intent(mContext, NinePictureActivity.class);
+                startActivity(intent);
+                break;
+        }
     }
 
     class OnPageChangeListener implements ViewPager.OnPageChangeListener {

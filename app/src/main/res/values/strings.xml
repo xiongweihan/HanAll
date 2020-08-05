@@ -6,6 +6,10 @@
 
     <string name="tv_next">跳过</string>
 
+    <string name="text_add">加</string>
+    <string name="text_reduce">减</string>
+    <string name="text_wechat_nine_pic">仿微信九宫格图片</string>
+
     <array name="characters">
         <item>#</item>
         <item>A</item>

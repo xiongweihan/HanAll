@@ -60,14 +60,22 @@
                 android:layout_marginEnd="@dimen/dp_10"
                 android:layout_marginTop="@dimen/dp_10"/>
 
-            <TextView
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="@dimen/dp_10"-->
+<!--                android:text="通讯录右侧字母列表"/>-->
+<!--            <com.example.hanall.widget.CharacterView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"/>-->
+
+            <Button
+                android:id="@+id/btn_toNineImageActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/dp_10"
-                android:text="通讯录右侧字母列表"/>
-            <com.example.hanall.widget.CharacterView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_gravity="center_horizontal"
+                android:text="@string/text_wechat_nine_pic"/>
 
         </LinearLayout>
     </ScrollView>

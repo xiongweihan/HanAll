@@ -1,21 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-<!--    圆角矩形-->
+    <!--    圆角矩形-->
     <declare-styleable name="HeadView">
         <attr name="shape" format="enum">
-            <enum name="rect" value="1"/>
-            <enum name="circle" value="2"/>
+            <enum name="rect" value="1" />
+            <enum name="circle" value="2" />
         </attr>
-        <attr name="border_width" format="dimension"/>
-        <attr name="border_color" format="color"/>
-        <attr name="cover_color" format="color"/>
-        <attr name="round_radius" format="dimension"/>
+        <attr name="border_width" format="dimension" />
+        <attr name="border_color" format="color" />
+        <attr name="cover_color" format="color" />
+        <attr name="round_radius" format="dimension" />
     </declare-styleable>
 
     <!--三个圆点loading图-->
     <declare-styleable name="ThreeDotsLoadingView">
-        <attr name="dot_color" format="color"/>
-        <attr name="dot_radius" format="float"/>
+        <attr name="dot_color" format="color" />
+        <attr name="dot_radius" format="float" />
+    </declare-styleable>
+
+    <!--九宫格自定义属性-->
+    <declare-styleable name="NineImageView">
+        <!--控件宽高-->
+        <attr name="nine_layoutWidth" format="dimension" />
+        <!--单张图片最大宽度范围-->
+        <attr name="nine_singleImagMaxWidth" format="dimension" />
+        <!--图片之间间隙大小-->
+        <attr name="nine_iamge_gap" format="dimension" />
     </declare-styleable>
 </resources>
