@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/webview"
+        android:icon="@drawable/ic_setting"
+        android:orderInCategory="80"
+        android:title="web"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/weibo"
+        android:icon="@drawable/ic_qq_fill"
+        android:orderInCategory="90"
+        android:title="weibo"
+        app:showAsAction="ifRoom" />
+
+    <item
+        android:id="@+id/action_settings"
+        android:orderInCategory="100"
+        android:title="设置"
+        app:showAsAction="never" />
+</menu>

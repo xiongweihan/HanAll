@@ -8,8 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import androidx.cardview.widget.CardView;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.ActivityOptionsCompat;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.hanall.activity.MaterialDesignActivity;
 import com.example.hanall.activity.NinePictureActivity;
 import com.example.hanall.adapter.MedalPagerAdapter;
 import com.example.hanall.utils.GlideUtil;
@@ -20,6 +24,8 @@ import com.example.hanall.widget.PageTransformer.HorizontalStackTransformerWithR
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+
+import butterknife.BindView;
 
 public class SecondFragment extends BaseFragment implements View.OnClickListener {
     private ViewPager mViewPager;
@@ -32,12 +38,16 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
     private List<View> imagViews;//用于包含勋章要显示的图片
     private int currentPosition;//当前选中的下标
 
+    @BindView(R.id.iv_scenery)
+    ImageView iv_scenery;
+
 
     @Override
     protected void initView(View view) {
         mViewPager = view.findViewById(R.id.viewpager);
         llDotLayout = view.findViewById(R.id.dot_layout);
         mViewPagerContainer = view.findViewById(R.id.viewPagerContainer);
+
         view.findViewById(R.id.btn_toNineImageActivity).setOnClickListener(this);
     }
 
@@ -64,6 +74,7 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
     @Override
     protected void initListener() {
         super.initListener();
+        iv_scenery.setOnClickListener(this);
     }
 
     /**
@@ -152,6 +163,22 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
             case R.id.btn_toNineImageActivity:
                 intent = new Intent(mContext, NinePictureActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.iv_scenery:
+//                intent = new Intent(mContext, MaterialDesignActivity.class);
+//                startActivity(intent);
+                //动画
+                ActivityOptionsCompat compat = ActivityOptionsCompat.makeScaleUpAnimation(iv_scenery, iv_scenery.getWidth() / 2, iv_scenery.getHeight() / 2, 0, 0);
+                ActivityCompat.startActivity(mContext, new Intent(mContext, MaterialDesignActivity.class), compat.toBundle());
+
+//                //共享元素动画
+//                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(
+//                        (Activity) mContext,
+//                        iv_scenery,
+//                        "basic"
+//                );
+//                intent = new Intent(mContext, MaterialDesignActivity.class);
+//                startActivity(intent, optionsCompat.toBundle());
                 break;
         }
     }

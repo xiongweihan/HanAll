@@ -17,6 +17,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".activity.MaterialDesignActivity"></activity>
         <activity android:name=".activity.NinePictureActivity" />
         <activity
             android:name=".activity.SplashActivity"
