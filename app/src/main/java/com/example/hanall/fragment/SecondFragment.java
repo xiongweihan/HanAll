@@ -7,19 +7,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.ActivityOptionsCompat;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.hanall.activity.AddressListActivity;
+import com.example.hanall.activity.DashboardActivity;
 import com.example.hanall.activity.MaterialDesignActivity;
 import com.example.hanall.activity.NinePictureActivity;
 import com.example.hanall.adapter.MedalPagerAdapter;
 import com.example.hanall.utils.GlideUtil;
 import com.example.hanall.utils.ScreenUtil;
 import com.example.hanall.R;
+import com.example.hanall.utils.ToastUtil;
 import com.example.hanall.widget.PageTransformer.HorizontalStackTransformerWithRotation;
+import com.example.hanall.widget.PageTransformer.ZoomOutPageTransformer;
+import com.example.hanall.widget.ShopNumView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +46,7 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
 
     @BindView(R.id.iv_scenery)
     ImageView iv_scenery;
+    private ShopNumView shopnumview;
 
 
     @Override
@@ -49,6 +56,9 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
         mViewPagerContainer = view.findViewById(R.id.viewPagerContainer);
 
         view.findViewById(R.id.btn_toNineImageActivity).setOnClickListener(this);
+        view.findViewById(R.id.btn_address_book).setOnClickListener(this);
+        view.findViewById(R.id.btn_yibiaopan).setOnClickListener(this);
+        shopnumview = view.findViewById(R.id.shopnumview);
     }
 
 
@@ -75,6 +85,12 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
     protected void initListener() {
         super.initListener();
         iv_scenery.setOnClickListener(this);
+        shopnumview.setOnQuantityChangeCallBack(new ShopNumView.QuantityChangeCallBack() {
+            @Override
+            public void changeClick(int value) {
+                ToastUtil.showToast("-->"+value);
+            }
+        });
     }
 
     /**
@@ -140,7 +156,7 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
 //        viewpager设置setPageTransformer（）方法一定要在setAdapter（）方法之前
 
         //设置ViewPager切换效果，即实现画廊效果
-        mViewPager.setPageTransformer(true, new HorizontalStackTransformerWithRotation(mContext, mViewPager));
+        mViewPager.setPageTransformer(true, new ZoomOutPageTransformer());
         //为ViewPager设置PagerAdapter
         mViewPager.setAdapter(new MedalPagerAdapter(imagViews));
         //设置预加载数量
@@ -179,6 +195,16 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
 //                );
 //                intent = new Intent(mContext, MaterialDesignActivity.class);
 //                startActivity(intent, optionsCompat.toBundle());
+                break;
+
+            case R.id.btn_address_book://放通讯录
+                intent = new Intent(mContext, AddressListActivity.class);
+                startActivity(intent);
+                break;
+
+            case R.id.btn_yibiaopan: //自定义控件，仪表盘
+                intent = new Intent(mContext, DashboardActivity.class);
+                startActivity(intent);
                 break;
         }
     }
