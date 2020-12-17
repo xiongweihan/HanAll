@@ -16,6 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.hanall.activity.AddressListActivity;
 import com.example.hanall.activity.DashboardActivity;
+import com.example.hanall.activity.LeafLoadingActivity;
 import com.example.hanall.activity.MaterialDesignActivity;
 import com.example.hanall.activity.NinePictureActivity;
 import com.example.hanall.adapter.MedalPagerAdapter;
@@ -58,6 +59,7 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
         view.findViewById(R.id.btn_toNineImageActivity).setOnClickListener(this);
         view.findViewById(R.id.btn_address_book).setOnClickListener(this);
         view.findViewById(R.id.btn_yibiaopan).setOnClickListener(this);
+        view.findViewById(R.id.btn_leaf).setOnClickListener(this);
         shopnumview = view.findViewById(R.id.shopnumview);
     }
 
@@ -205,6 +207,9 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
             case R.id.btn_yibiaopan: //自定义控件，仪表盘
                 intent = new Intent(mContext, DashboardActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.btn_leaf:
+                LeafLoadingActivity.startActivity(mContext);
                 break;
         }
     }
