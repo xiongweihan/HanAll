@@ -19,6 +19,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.hanall.R;
 import com.example.hanall.adapter.BasicRecyclerAdapter;
 import com.example.hanall.utils.ToastUtil;
+import com.example.hanall.utils.recycleview.IconItemDecoration;
+import com.example.hanall.utils.recycleview.LinearItemDecoration;
+import com.example.hanall.utils.recycleview.ProgressItemDecoration;
 import com.example.hanall.utils.recycleview.RecycleUtil;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
@@ -103,9 +106,14 @@ public class MaterialDesignActivity extends BaseActivity {
             list.add("Basic");
         }
         BasicRecyclerAdapter adapter = new BasicRecyclerAdapter(list, MaterialDesignActivity.this);
+
+        ProgressItemDecoration itemDecoration = new ProgressItemDecoration(this);
         RecycleUtil.getInstance(MaterialDesignActivity.this, recyclerView)
                 .setVertical()
+                .setDivder(itemDecoration)
                 .setAdapter(adapter);
+        itemDecoration.setDoingPosition(recyclerView,4);
+
     }
 
 //    @Override
