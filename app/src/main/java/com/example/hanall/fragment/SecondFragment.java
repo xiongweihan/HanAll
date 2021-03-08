@@ -16,6 +16,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import com.example.hanall.activity.AddressListActivity;
 import com.example.hanall.activity.DashboardActivity;
+import com.example.hanall.activity.HuaweiLoadingActivity;
 import com.example.hanall.activity.LeafLoadingActivity;
 import com.example.hanall.activity.MaterialDesignActivity;
 import com.example.hanall.activity.NinePictureActivity;
@@ -60,6 +61,7 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
         view.findViewById(R.id.btn_address_book).setOnClickListener(this);
         view.findViewById(R.id.btn_yibiaopan).setOnClickListener(this);
         view.findViewById(R.id.btn_leaf).setOnClickListener(this);
+        view.findViewById(R.id.btn_huaWei_loading).setOnClickListener(this);
         shopnumview = view.findViewById(R.id.shopnumview);
     }
 
@@ -174,6 +176,7 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
 
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public void onClick(View v) {
         Intent intent;
@@ -208,8 +211,11 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
                 intent = new Intent(mContext, DashboardActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.btn_leaf:
+            case R.id.btn_leaf://叶子loading
                 LeafLoadingActivity.startActivity(mContext);
+                break;
+            case R.id.btn_huaWei_loading://华为loading
+                HuaweiLoadingActivity.startActivity(mContext);
                 break;
         }
     }

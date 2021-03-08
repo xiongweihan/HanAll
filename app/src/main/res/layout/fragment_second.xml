@@ -150,6 +150,14 @@
                 android:layout_marginTop="@dimen/dp_20"
                 android:layout_gravity="center"
                 android:text="叶子loading"/>
+
+            <Button
+                android:id="@+id/btn_huaWei_loading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_gravity="center"
+                android:text="华为loading"/>
         </LinearLayout>
     </ScrollView>
 

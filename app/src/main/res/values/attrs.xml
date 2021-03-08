@@ -29,7 +29,7 @@
         <attr name="nine_iamge_gap" format="dimension" />
     </declare-styleable>
 
-<!--    城市-->
+    <!--    城市-->
     <string-array name="provinces">
         <item>广东</item>
         <item>北京</item>
@@ -79,5 +79,12 @@
     <declare-styleable name="shopNumberView">
         <attr name="maxValue" format="dimension" />
         <attr name="canInput" format="boolean" />
+    </declare-styleable>
+
+    <!--    华为loading自定义属性： 控件大小，控件颜色，转一圈的时间-->
+    <declare-styleable name="HuaWeiLoadingView">
+        <attr name="hw_size" format="dimension" />
+        <attr name="hw_color" format="color" />
+        <attr name="hw_duration" format="integer" />
     </declare-styleable>
 </resources>
