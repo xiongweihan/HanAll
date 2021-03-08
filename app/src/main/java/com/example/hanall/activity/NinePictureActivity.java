@@ -21,26 +21,28 @@ import com.example.hanall.widget.NineImageView;
 import java.util.ArrayList;
 import java.util.List;
 
-import butterknife.BindView;
 
 /**
  * 仿微信 九宫格 图片展示
  */
-public class NinePictureActivity extends BaseActivity {
+public class NinePictureActivity extends TitleActivity {
 
-    @BindView(R.id.nine_iamge)
     NineImageView nineImageView;
 
-    private List<String> mDatas = new ArrayList<>();
+    private final List<String> mDatas = new ArrayList<>();
+    private static final String imageUrl = "https://kr.shanghai-jiuxin.com/file/2020/1205/small07a4130b980565e055cfe53f8e552527.jpg";
 
-    @Override
-    protected int getLayoutId() {
-        return R.layout.activity_nine_picture;
-    }
 
     @Override
     protected void initView() {
-        mDatas.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596617479450&di=703ee0abfd2102e8bdc925187cbb0ff8&imgtype=0&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D3857696996%2C2875137765%26fm%3D214%26gp%3D0.jpg");
+        super.initView();
+        nineImageView = findViewById(R.id.nine_iamge);
+        mDatas.add(imageUrl);
+    }
+
+    @Override
+    protected int getLayoutId2() {
+        return R.layout.activity_nine_picture;
     }
 
     @Override
@@ -95,9 +97,9 @@ public class NinePictureActivity extends BaseActivity {
      * 加号点击事件
      */
     public void addClick(View view) {
-        if(mDatas.size() < 9){
+        if (mDatas.size() < 9) {
 //        mDatas.add("https://c-ssl.duitang.com/uploads/item/202006/16/20200616115751_lcicn.thumb.1000_0.jpg");
-        mDatas.add("https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1596617479450&di=703ee0abfd2102e8bdc925187cbb0ff8&imgtype=0&src=http%3A%2F%2Fimg1.imgtn.bdimg.com%2Fit%2Fu%3D3857696996%2C2875137765%26fm%3D214%26gp%3D0.jpg");
+            mDatas.add(imageUrl);
         }
         initData();
 
@@ -107,7 +109,7 @@ public class NinePictureActivity extends BaseActivity {
      * 减号点击事件
      */
     public void reduceClick(View view) {
-        if(mDatas.size() > 1){
+        if (mDatas.size() > 1) {
             mDatas.remove(mDatas.size() - 1);
         }
         initData();
