@@ -19,6 +19,7 @@ import com.example.hanall.utils.ConvertUtil;
 
 /**
  * 华为loadingView
+ * https://blog.csdn.net/chuhe1989/article/details/104321103#comments_15207267
  */
 
 public class HuaWeiLoadingView extends View {

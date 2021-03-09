@@ -29,6 +29,8 @@ import java.util.stream.Collectors;
 
 /**
  * 通讯录
+ * https://www.jianshu.com/p/3eff217839fc 这里有个更好的
+ * 自己这个通讯录的右侧字母列表有点问题，点击坐标不准确（暂未解决）
  */
 public class AddressListActivity extends TitleActivity {
 
