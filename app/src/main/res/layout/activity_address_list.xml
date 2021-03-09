@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity.AddressListActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_address_list"
+        android:layout_width="match_parent"
+        android:paddingEnd="@dimen/dp_20"
+        android:layout_height="match_parent"
+        tools:ignore="RtlSymmetry" />
+
+    <com.example.hanall.widget.SideBarView
+        android:id="@+id/sidebar_view"
+        android:layout_width="@dimen/dp_20"
+        android:background="#336C3B3B"
+        android:layout_alignParentEnd="true"
+        android:layout_height="match_parent"/>
+    <TextView
+        android:id="@+id/tv_character_view"
+        android:layout_width="@dimen/dp_50"
+        android:layout_height="@dimen/dp_50"
+        android:background="@drawable/bg_circle"
+        android:gravity="center"
+        tools:text="V"
+        android:visibility="gone"
+        android:textSize="@dimen/size_20sp"
+        android:textColor="@color/colorAccent"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
