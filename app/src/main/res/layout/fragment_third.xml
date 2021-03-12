@@ -6,8 +6,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
+    <!--性别选择布局-->
     <LinearLayout
+        android:id="@+id/ll_sex_layout"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dp_50"
         android:layout_marginTop="@dimen/dp_20"
@@ -56,4 +57,25 @@
 
     </LinearLayout>
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/vp_looper"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_250"
+        android:layout_marginTop="@dimen/dp_20"
+        android:overScrollMode="never"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_sex_layout" />
+    <!--        android:overScrollMode="never"
+                这个属性：never :说明viewpager在滑动到边上时，在滑动，不会出现阴影效果
+    -->
+    <LinearLayout
+        android:id="@+id/ll_dots_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dp_5"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="@id/vp_looper"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
