@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/dp_10"
+    android:orientation="vertical">
+
+    <com.example.hanall.widget.cehuashanchu.ItemDragLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!--正常item布局-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="@dimen/dp_10"
+                android:text="list"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/size_18" />
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#F32B2B"/>
+        </LinearLayout>
+
+        <!--侧滑隐藏部布局-->
+        <LinearLayout
+            android:layout_width="@dimen/dp_100"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_cancel"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#276FEA"
+                android:gravity="center"
+                android:text="取消"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_14sp" />
+
+            <TextView
+                android:id="@+id/tv_read"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#B14F4F"
+                android:gravity="center"
+                android:text="已读"
+                android:textColor="@color/white"
+                android:textSize="@dimen/size_14sp" />
+
+        </LinearLayout>
+
+    </com.example.hanall.widget.cehuashanchu.ItemDragLayout>
+
+</LinearLayout>

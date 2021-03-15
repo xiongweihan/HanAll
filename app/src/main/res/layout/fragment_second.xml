@@ -158,6 +158,15 @@
                 android:layout_marginTop="@dimen/dp_20"
                 android:layout_gravity="center"
                 android:text="华为loading"/>
+
+            <Button
+                android:id="@+id/btn_cehua"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp_20"
+                android:layout_gravity="center"
+                android:text="侧滑list"/>
+
         </LinearLayout>
     </ScrollView>
 

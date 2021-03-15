@@ -15,6 +15,7 @@ import androidx.core.app.ActivityOptionsCompat;
 import androidx.viewpager.widget.ViewPager;
 
 import com.example.hanall.activity.AddressListActivity;
+import com.example.hanall.activity.CehuaActivity;
 import com.example.hanall.activity.DashboardActivity;
 import com.example.hanall.activity.HuaweiLoadingActivity;
 import com.example.hanall.activity.LeafLoadingActivity;
@@ -62,6 +63,7 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
         view.findViewById(R.id.btn_yibiaopan).setOnClickListener(this);
         view.findViewById(R.id.btn_leaf).setOnClickListener(this);
         view.findViewById(R.id.btn_huaWei_loading).setOnClickListener(this);
+        view.findViewById(R.id.btn_cehua).setOnClickListener(this);
         shopnumview = view.findViewById(R.id.shopnumview);
     }
 
@@ -216,6 +218,9 @@ public class SecondFragment extends BaseFragment implements View.OnClickListener
                 break;
             case R.id.btn_huaWei_loading://华为loading
                 HuaweiLoadingActivity.startActivity(mContext);
+                break;
+            case R.id.btn_cehua:
+                CehuaActivity.StartActivity(mContext);
                 break;
         }
     }
