@@ -25,13 +25,8 @@ public class CehuaAdapter extends BaseRecyclerAdapter<String> {
 
     @Override
     protected void bindView(BaseVH holder, int position) {
-        holder.getTextView(R.id.tv_name).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(mContext, "正文", Toast.LENGTH_SHORT).show();
-
-            }
-        });
+        holder.getTextView(R.id.tv_name).setOnClickListener(v ->
+                Toast.makeText(mContext, "正文", Toast.LENGTH_SHORT).show());
         holder.getTextView(R.id.tv_cancel).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
