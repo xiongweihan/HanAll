@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingBottom="@dimen/dp_10"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/dp_10">
 
-    <com.example.hanall.widget.cehuashanchu.ItemDragLayout
+    <com.example.hanall.widget.cehuashanchu.SwipeMenuLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -25,10 +25,11 @@
                 android:text="list"
                 android:textColor="@color/colorPrimary"
                 android:textSize="@dimen/size_18" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#F32B2B"/>
+                android:background="#F32B2B" />
         </LinearLayout>
 
         <!--侧滑隐藏部布局-->
@@ -61,6 +62,6 @@
 
         </LinearLayout>
 
-    </com.example.hanall.widget.cehuashanchu.ItemDragLayout>
+    </com.example.hanall.widget.cehuashanchu.SwipeMenuLayout>
 
 </LinearLayout>
