@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".activity.CehuaActivity"></activity>
+        <activity android:name=".activity.BehaviorRecyclerActivity"></activity>
+        <activity android:name=".activity.CehuaActivity" />
         <activity android:name=".activity.HuaweiLoadingActivity" />
         <activity android:name=".activity.LeafLoadingActivity" />
         <activity android:name=".activity.DashboardActivity" />

@@ -1,5 +1,6 @@
 package com.example.hanall.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.widget.TextView;
 
@@ -10,7 +11,7 @@ import java.util.List;
 
 public class BasicRecyclerAdapter extends BaseRecyclerAdapter<String> {
 
-    public BasicRecyclerAdapter(List<String> list, MaterialDesignActivity context){
+    public BasicRecyclerAdapter(List<String> list, Activity context){
         this.mList = list;
         this.mContext = context;
     }
